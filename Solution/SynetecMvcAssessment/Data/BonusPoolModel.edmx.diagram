@@ -7,6 +7,7 @@
       <Diagram DiagramId="16dcd977e8ac4f58856f04257f57cff1" Name="Diagram1">
         <EntityTypeShape EntityType="MvcInterviewV3Model.HrDepartment" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MvcInterviewV3Model.HrEmployee" PointX="3.375" PointY="0.75" Width="1.5" IsExpanded="true" />
+        <AssociationConnector Association="MvcInterviewV3Model.HrEmployeeHrDepartment" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -22,5 +22,7 @@ namespace InterviewTestTemplatev2.Data
         public string JobTitle { get; set; }
         public int Salary { get; set; }
         public string Full_Name { get; set; }
+    
+        public virtual HrDepartment HrDepartment { get; set; }
     }
 }

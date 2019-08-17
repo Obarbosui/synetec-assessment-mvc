@@ -17,13 +17,11 @@ namespace InterviewTestTemplatev2.Helpers.Controllers
     {
         private readonly IHrEmployeesService hrEmployeesService;
         private readonly IBonusPoolService bonusPoolService;
-        private readonly IHrDepartmentService hrDepartmentService;
 
-        public BonusPoolControllerHelper(IHrEmployeesService hrEmployeesService, IBonusPoolService bonusPoolService, IHrDepartmentService hrDepartmentService)
+        public BonusPoolControllerHelper(IHrEmployeesService hrEmployeesService, IBonusPoolService bonusPoolService)
         {
             this.hrEmployeesService = hrEmployeesService;
             this.bonusPoolService = bonusPoolService;
-            this.hrDepartmentService = hrDepartmentService;
         }
 
         public BonusPoolCalculatorModel PrepareBonusPoolCalculatorModel()
@@ -41,7 +39,7 @@ namespace InterviewTestTemplatev2.Helpers.Controllers
             if (hrEmployee == null)
                 return model;
 
-            var hrDepartment = hrDepartmentService.FindById(hrEmployee.HrDepartmentId);
+            var hrDepartment = hrEmployee.HrDepartment; //hrDepartmentService.FindById(hrEmployee.HrDepartmentId);
             if (hrDepartment == null)
                 return model;
 
