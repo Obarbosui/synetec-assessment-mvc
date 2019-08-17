@@ -2,11 +2,23 @@
 
 
 @{
-    ViewBag.Title = "Caclulate";
+    ViewBag.Title = "Calculate";
 }
 
 <h2>Bonus Pool Allocation</h2>
 
-<p>The bonus pool allocation for @Html.DisplayFor(model => model.hrEmployee.Full_Name) is: £@Html.DisplayFor(model => model.bonusPoolAllocation)</p>
+@if (Model.HrEmployee == null)
+{
+    <p>An error as occurred with the calculation. Please contact support if the error persist.</p>
+}
+else
+{
+    <p>The bonus pool allocation for @Html.DisplayFor(model => model.HrEmployee.Full_Name) is: £@Html.DisplayFor(model => model.BonusPoolAllocation) </p>
+    if (Model.BonusPoolAllocationHrDepartment.HasValue)
+    {
+        <p>But if we consider the HR Department @Html.DisplayFor(model => model.EmployeeHrDepartmentName) allocation of @Html.DisplayFor(model => model.HrDepartmentAllocationPercentage)% then it should be: £@Html.DisplayFor(model => model.BonusPoolAllocationHrDepartment)</p>
+    }
+}
 
-@Html.ActionLink("Click her to calculate for another employee", "Index")
+
+@Html.ActionLink("Click here to calculate for another employee", "Index")
