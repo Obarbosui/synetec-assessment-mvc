@@ -25,11 +25,27 @@ namespace InterviewTestTemplatev2.Repositories
 
         public IEnumerable<T> GetAll()
         {
-            return dbSet.ToList();
+            try
+            {
+                return dbSet.ToList();
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+            
         }
         public T FindById(int id)
         {
-            return dbSet.Find(id);
+            try
+            {
+                return dbSet.Find(id);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            
         }
     }
 }

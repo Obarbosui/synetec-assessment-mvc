@@ -19,7 +19,7 @@ namespace InterviewTestTemplatev2.Services.Repostiories
         }
         public IEnumerable<HrEmployee> FilterByDepartment(IEnumerable<HrEmployee> hrEmployees, int departmentId)
         {
-            return hrEmployees.Where(employee => employee.HrDepartmentId == departmentId);
+            return hrEmployees?.Where(employee => employee.HrDepartmentId == departmentId);
         }
 
     }
